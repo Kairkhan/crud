@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
-use MongoDB\Driver\Session;
 
 class PostController extends Controller
 {
@@ -40,9 +39,7 @@ class PostController extends Controller
     public function store()
     {
         //
-        $post = new Post;
-        $post->title = request('title');
-        $post->body = request('body');
+        $post = new Post($this->validatePost());
         $post->user_id = auth()->user()->id;
         $post->save();
         return redirect('/posts');

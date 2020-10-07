@@ -14,7 +14,7 @@
                 <label for="exampleFormControlTextarea1">Body</label>
                 <textarea class="form-control" name="body" rows="3" placeholder="Edit post's body ..."> {{$post->body}}</textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Edit</button>
         </form>
     </div>
 @endsection

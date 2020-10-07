@@ -47,6 +47,14 @@
 
                         <div class="post-content-body">
                             <p>{{$post->body}}</p>
+                            @if($post->user->id === @auth()->user()->id)
+                                <a href="{{route('posts.edit',['post'=>$post->id])}}">
+                                    <button class="btn btn-md btn-primary" style="border-radius: 5px;">Edit</button>
+                                </a>
+                                <a href="{{route('posts.delete',['post'=>$post->id])}}">
+                                    <button class="btn btn-md btn-danger" style="border-radius: 5px;">Delete</button>
+                                </a>
+                            @endif
                         </div>
 
 
