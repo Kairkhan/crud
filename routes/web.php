@@ -25,3 +25,5 @@ Route::get('/posts/{post}','PostController@show') ->name('posts.show');
 Route::get('/posts/{post}/delete','PostController@delete') -> name('posts.delete');
 Route::delete('/posts/{post}','PostController@destroy') -> name('posts.destroy');
 Route::get('/categories/{category}','CategoryController@index')->name('categories.index');
+Route::get('/profile/','UserController@index')->name('user.index');
+Route::get('/profile/posts','UserController@show')->name('user.show');

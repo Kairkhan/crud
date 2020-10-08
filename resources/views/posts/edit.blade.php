@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 
+
 @section('content')
-    <div class="container">
+    <div class="container min-vh-100 mt-5">
         <form action="/posts/{{$post->id}}" method="POST">
             @csrf
             @method('PUT')

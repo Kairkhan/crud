@@ -3,12 +3,14 @@
 
 
 @section('content')
-    <div class="container">
+    <div class="container mt-5 min-vh-100">
         <div class="row">
-            @foreach($posts as $post)
+            @forelse($posts as $post)
                 <div class="col-lg-4 mb-4">
                     <div class="entry2">
-                        <a href="{{route('posts.show',['post'=>$post->id])}}"><img src="{{asset('images/img_1.jpg')}}" alt="Image" class="img-fluid rounded"></a>
+                        <a href="{{route('posts.show',['post'=>$post->id])}}"><img src="{{asset('images/img_1.jpg')}}"
+                                                                                   alt="Image"
+                                                                                   class="img-fluid rounded"></a>
                         <div class="excerpt">
                             <h2><a href="{{route('posts.show',['post'=>$post->id])}}">{{$post->title}}</a></h2>
                             <div class="post-meta align-items-center text-left clearfix">
@@ -20,7 +22,9 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+            @empty
+                <h1>No posts</h1>
+            @endforelse
         </div>
     </div>
 @endsection
